@@ -11,7 +11,7 @@ public class FacebookTest {
 	    driver.manage().window().maximize(); // ✅ Maximizes the browser window
 
 	    driver.get("https://www.facebook.com");
-	    System.out.println("Title of the page is: " + driver.getTitle());
+	    System.out.println("Title of the page is:: " + driver.getTitle());
 
 	    driver.quit();
 	}
