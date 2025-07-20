@@ -6,8 +6,8 @@ on:
       - master  # Change this to your default branch if needed
 
 env:
-  userName: DinesPallgani
-  passWord: something@123
+  FB_UserName: pallagani.dinesh@gmail.com
+  FB_PassWord: Change@2k19
 
 jobs:
   run-test:
@@ -51,7 +51,7 @@ jobs:
           path: target/surefire-reports/emailable-report.html
 
       - name: Echo Username
-        run: echo ${{ env.userName }}
+        run: echo ${{ env.FB_UserName }}
         
       - name: printing Password
-        run: echo ${{env.passWord}}
+        run: echo ${{env.FB_PassWord}}
