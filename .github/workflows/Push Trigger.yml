@@ -45,7 +45,7 @@ jobs:
         run: mvn clean test
 
       - name: Upload Emailable Report
-        if: failure() && steps.execute-tests.outcome != 'success'
+        if: success() && steps.execute-tests.outcome != 'failure'
         uses: actions/upload-artifact@v4
         with:
           name: test-report
