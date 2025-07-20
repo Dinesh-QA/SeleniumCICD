@@ -12,7 +12,7 @@ public class FacebookTest {
 
 	    driver.get("https://www.facebook.com");
 	    System.out.println("Title of the page is:: " + driver.getTitle());
-	    System.out.println("task Done. . . .");
+	    System.out.println("Additional task Done. . . .");
 
 	    driver.quit();
 	}
