@@ -6,8 +6,8 @@ on:
       - master  # Change this to your default branch if needed
 
 env:
-  FB_UserName: userName123
-  FB_PassWord: password123
+  FB_UserName: ${{secrets.FB_USERNAME}}
+  FB_PassWord: ${{secrets.FB_PASSWORD}}
 
 jobs:
   run-test:
