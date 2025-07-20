@@ -23,8 +23,7 @@ public class FacebookTest {
 		System.out.println("Title of the page is:: " + driver.getTitle());
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.urlContains("https://www.facebook.com/"));
-		driver.findElement(By.xpath("//input[@aria-label='Email address or phone number']"))
-				.sendKeys(userName);
+		driver.findElement(By.xpath("//input[contains(@aria-label,'Email address')]")).sendKeys(userName);
 		driver.findElement(By.xpath("//input[@aria-label='Password']")).sendKeys(password);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		wait.until(ExpectedConditions.urlContains("facebook.com"));
