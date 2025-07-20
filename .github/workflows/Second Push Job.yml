@@ -1,6 +1,6 @@
 name: Second Push job
 
-on: push
+on: workflow_call
 
 jobs:
   job-one:
