@@ -56,3 +56,14 @@ jobs:
         
       - name: printing Password
         run: echo ${{env.FB_PassWord}}
+
+  echo-job:
+    name: PRINT ON CMD
+    runs-on: windows-latest
+
+    steps:
+      - name: Print echo
+        run: |
+          echo "Dinesh Pallagani"
+          echo "Rakesh Pallagani"
+        
