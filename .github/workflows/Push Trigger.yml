@@ -59,6 +59,7 @@ jobs:
 
   echo-job:
     name: PRINT ON CMD
+    needs: run-test
     runs-on: windows-latest
 
     steps:
