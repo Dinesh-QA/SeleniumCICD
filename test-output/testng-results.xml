@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-13T15:25:26 IST" name="Suite" finished-at="2025-07-13T15:25:39 IST" duration-ms="12517">
+  <suite started-at="2025-07-13T16:29:11 IST" name="Suite" finished-at="2025-07-13T16:29:17 IST" duration-ms="5448">
     <groups>
     </groups>
-    <test started-at="2025-07-13T15:25:26 IST" name="Test" finished-at="2025-07-13T15:25:39 IST" duration-ms="12517">
+    <test started-at="2025-07-13T16:29:11 IST" name="Test" finished-at="2025-07-13T16:29:17 IST" duration-ms="5448">
       <class name="com.facbook.test.FacebookTest">
-        <test-method signature="launchFacebook()[pri:0, instance:com.facbook.test.FacebookTest@4ac3c60d]" started-at="2025-07-13T15:25:26 IST" name="launchFacebook" finished-at="2025-07-13T15:25:39 IST" duration-ms="12458" status="PASS">
+        <test-method signature="launchFacebook()[pri:0, instance:com.facbook.test.FacebookTest@4ac3c60d]" started-at="2025-07-13T16:29:11 IST" name="launchFacebook" finished-at="2025-07-13T16:29:17 IST" duration-ms="5375" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchFacebook -->
