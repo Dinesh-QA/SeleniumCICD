@@ -18,12 +18,20 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'  # Adjust if your project uses a different version
+          java-version: '17'
 
       - name: Set up Maven
         uses: s4u/setup-maven-action@v1.18.0
         with:
           maven-version: '3.9.6'
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            maven-${{ runner.os }}-
 
       - name: Download Selenium Dependencies
         run: mvn dependency:resolve
