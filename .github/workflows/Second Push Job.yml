@@ -10,6 +10,9 @@ jobs:
       matrix:
         text1: ['Dinesh', 'Pallagani']
         text2: ['Rakesh', 'Pallagani']
+        exclude:
+          - text1: Dinesh
+            text2: Pallagani
     steps:
       - name: Print from Job One
         run: |
