@@ -14,6 +14,8 @@ public class FacebookTest {
 		driver.get("https://www.facebook.com");
 		System.out.println("Title of the page is:: " + driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
+		System.out.println("Printing from YML File userName : "+System.getenv("FB_UserName"));
+		System.out.println("Printing from YML File password : "+System.getenv("FB_PassWord"));
 		driver.quit();
 	}
 
