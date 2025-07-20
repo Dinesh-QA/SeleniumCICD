@@ -5,6 +5,10 @@ on:
     branches:
       - master  # Change this to your default branch if needed
 
+env:
+  userName: DinesPallgani
+  passWord: something@123
+
 jobs:
   run-test:
     name: Run Selenium Tests
@@ -45,3 +49,9 @@ jobs:
         with:
           name: test-report
           path: target/surefire-reports/emailable-report.html
+
+      - name: Echo Username
+        run: echo ${{ env.userName }}
+        
+      - name: printing Password
+        run: echo ${{env.passWord}}
