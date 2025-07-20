@@ -41,10 +41,11 @@ jobs:
         run: mvn dependency:resolve
 
       - name: Build and Run Tests with Maven
+        id: execute-tests
         run: mvn clean test
 
       - name: Upload Emailable Report
-        if: always()
+        if: success() && steps.execute-tests.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: test-report
