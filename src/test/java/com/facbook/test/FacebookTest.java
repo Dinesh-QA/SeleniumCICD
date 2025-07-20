@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class FacebookTest {
 	@Test
 	public void launchFacebook() {
-	    WebDriver driver = new ChromeDriver();
+	    //WebDriver driver = new ChromeDriver();
 	    driver.manage().window().maximize(); // ✅ Maximizes the browser window
 
 	    driver.get("https://www.facebook.com");
