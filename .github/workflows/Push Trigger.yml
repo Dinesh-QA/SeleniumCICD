@@ -6,8 +6,8 @@ on:
       - master  # Change this to your default branch if needed
 
 env:
-  FB_UserName: pallagani.dinesh@gmail.com
-  FB_PassWord: Change@2k19
+  FB_UserName: userName123
+  FB_PassWord: password123
 
 jobs:
   run-test:
