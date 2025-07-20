@@ -1,0 +1,27 @@
+name: Second Push job
+
+on: push
+
+jobs:
+  job-one:
+    name: Job One
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        text1: ['Dinesh', 'Pallagani']
+        text2: ['Rakesh', 'Pallagani']
+    steps:
+      - name: Print from Job One
+        run: |
+          echo ${{ matrix.text1 }}
+          echo ${{ matrix.text2 }}
+
+  job-second:
+    needs: job-one
+    name: Job Second
+    runs-on: windows-latest
+    steps:
+      - name: Print from Job Second
+        run: |
+          echo "Rakesh"
+          echo "Pallagani"
