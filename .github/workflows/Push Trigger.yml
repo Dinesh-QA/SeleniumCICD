@@ -14,8 +14,10 @@ jobs:
     name: Run Selenium Tests
     runs-on: windows-latest
     steps:
-      - name: Checkout code
+      - name: Checkout full repo
         uses: actions/checkout@v4
+        with:
+         fetch-depth: 0
 
       - name: Get code and execute
         uses: ./.github/actions/cached-dependencies
