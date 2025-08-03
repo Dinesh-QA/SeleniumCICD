@@ -16,15 +16,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Get code and execute
         uses: ./.github/actions/cached-dependencies
+
       - name: Upload Emailable Report
-        if: success() && steps.execute-tests.outcome != 'failure'
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: target/surefire-reports/emailable-report.html
-          
+
   echo-job:
     name: Echo Job
     needs: run-test
@@ -33,9 +35,9 @@ jobs:
       - name: Print echo
         run: |
           echo "Dinesh Pallagani"
-          echo "Rakesh Pallagani"   
+          echo "Rakesh Pallagani"
 
   third-job:
     name: Reuse Workflow
     needs: echo-job
-    uses: ./.github/workflows/second-push-job.yml  # Must be a reusable workflow with `on: workflow_call`
+    uses: ./.github/workflows/second-push-job.yml
