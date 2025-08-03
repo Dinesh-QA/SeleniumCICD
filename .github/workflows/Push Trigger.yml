@@ -15,7 +15,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Get code and execute
-        uses: ./.github/actions/cached-dependencies  # Must be a local action folder with action.yml inside
+        uses: ./.github/actions  # Must be a local action folder with action.yml inside
 
   echo-job:
     name: Echo Job
