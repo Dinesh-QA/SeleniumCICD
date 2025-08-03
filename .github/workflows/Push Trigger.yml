@@ -15,8 +15,14 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Get code and execute
-        uses: ./.github/actions  # Must be a local action folder with action.yml inside
-
+        uses: ./.github/actions
+      - name: Upload Emailable Report
+        if: success() && steps.execute-tests.outcome != 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: target/surefire-reports/emailable-report.html
+          
   echo-job:
     name: Echo Job
     needs: run-test
@@ -25,7 +31,7 @@ jobs:
       - name: Print echo
         run: |
           echo "Dinesh Pallagani"
-          echo "Rakesh Pallagani"
+          echo "Rakesh Pallagani"   
 
   third-job:
     name: Reuse Workflow
