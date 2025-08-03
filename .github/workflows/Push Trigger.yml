@@ -15,7 +15,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Get code and execute
-        uses: .\.github\actions\cached-dependencies.yml
+        uses: ./.github/actions/cached-dependencies  # Must be a local action folder with action.yml inside
 
   echo-job:
     name: Echo Job
@@ -30,4 +30,4 @@ jobs:
   third-job:
     name: Reuse Workflow
     needs: echo-job
-    uses: ./.github/workflows/second-push-job.yml
+    uses: ./.github/workflows/second-push-job.yml  # Must be a reusable workflow with `on: workflow_call`
