@@ -33,7 +33,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: screen shot
+          name: screen-shot
           path: target/screenshot.png
 
   echo-job:
