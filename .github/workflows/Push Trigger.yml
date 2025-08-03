@@ -15,7 +15,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Get code and execute
-        uses: ./.github/actions/cached-dependencies.yml
+        uses: .\.github\actions\cached-dependencies.yml
 
   echo-job:
     name: Echo Job
