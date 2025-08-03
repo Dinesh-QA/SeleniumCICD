@@ -1,0 +1,46 @@
+name: 'Get Code & run maven code'
+description: 'Download code, Install dependencies, run selenium code'
+runs:
+   using: 'composite'
+   steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Maven
+        uses: s4u/setup-maven-action@v1.18.0
+        with:
+          maven-version: '3.9.6'
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            maven-${{ runner.os }}-
+
+      - name: Download Selenium Dependencies
+        run: mvn dependency:resolve
+
+      - name: Build and Run Tests with Maven
+        id: execute-tests
+        run: mvn clean test
+
+      - name: Upload Emailable Report
+        if: success() && steps.execute-tests.outcome != 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: target/surefire-reports/emailable-report.html
+
+      - name: Echo Username
+        run: echo ${{ env.FB_UserName }}
+
+      - name: Print Password
+        run: echo ${{ env.FB_PassWord }}
