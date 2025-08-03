@@ -28,6 +28,13 @@ jobs:
         with:
           name: test-report
           path: target/surefire-reports/emailable-report.html
+          
+      - name: Upload Screen shot
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screen shot
+          path: target/screenshot.png
 
   echo-job:
     name: Echo Job
